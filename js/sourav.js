@@ -12,7 +12,7 @@ const createsourav = () => {
     in the near future, though I am paranoid and afraid about the path of life that I am walking right now, but then its the high time for me to 
     step up and learn about the difficulties that life is about to throw at me, But I have always collectively used people's experiences
     to avoid certain dead ends, so far my intellectuality has never disappointed me apart of some speed bumps that i have went through as an experiment.
-    But with all that I am still a newbiew..but Engineering has been a great ally to me..the good thing about being a Computer Sceince Engineer
+    But with all that I am still a newbiew..but Engineering has been a great ally to me..the good thing about being a Computer Science Engineer
     is that you get to dwell in the art of logics and wisdoms that each and every semester of it holds, ever since the 2nd year of my Btech
     I have closely monitored each and every aspects of the subjects and applying them in real life to solve issues, binary tree
     has to be my most closest topic of solving issues..being a developer or an enthusiast of CODING since the dark days of 2017
