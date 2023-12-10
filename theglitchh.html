@@ -1,0 +1,116 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/fontawesome.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel='stylesheet' href='glitchhstyle.css'>
+	<link rel="" href="close.css">
+	<link rel="icon" href="S.png">
+	<title>Sourav</title>
+	<meta charset="UTF-8">
+
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta property="og:title" content="Sourav">
+	<meta property="og:description" content="Sourav's Introductory website">
+</head>
+
+
+<style>
+	/* Additional CSS for the zoom effect */
+	.boxclass {
+		transition: transform 0.3s ease-in-out;
+		position: relative;
+		z-index: 1;
+	}
+
+	.zoom-effect {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(1.2);
+		transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+		filter: blur(0);
+		z-index: 2;
+	}
+
+	.blurred-background {
+		filter: blur(5px);
+	}
+
+	
+</style>
+
+<body>
+<div class="boxclass">
+<table width="100%" border="0">
+<tr> <td style="padding-left:-20px;" rowspan="4"> <img class="imgclass1" src="./res/PXL_20230729_140247553.jpg" alt="souravImg">  </td>
+<td><p class="p1 gradient" style="font-weight: bold; font-size: 20px;">Sourav Gope</p></td>
+</tr>
+<tr><td><p><i class="fa-solid fa-calendar-days"></i> Age: 22</p></td></tr>
+	<tr><td><p>Education: Btech@CSE</p></td></tr>
+	<tr><td><p>Contact: +919366855940</p></td></tr>
+</table>
+</p>
+	<table>
+<tbody>
+<tr> <td><p>Hello there my name is Sourav Gope, I have completed my Btech In Computer Science & Engineering and I am currently
+working as a Programmerr Analyst at <a href="Https://SRINSIGHTS.com"> Strategic Research Insights. </a> </p></td></tr>
+</tbody>
+	</table>
+	<br>
+	<table> <tr> <td><ul>
+		<li>
+			<a href="#">
+				<i class="fas fa-paper-plane icon"></i>   </a>
+		</li>
+		<li>
+			<a href="#"><i class="fab fa-github icon"></i></a>
+		</li>
+		<li>
+			<a href="#"><i class="fas fa-code-branch icon"></i></a></li>
+		<li>
+			<a href="#"><i class="fas fa-envelope icon"></i></a></li>
+	</ul></td></tr></table>
+
+</div>
+
+</body>
+<div style="margin-left:-1000px;" class="closeclass">
+	<div style="margin-top:400px;" class="box-1 close-btn">
+		<div style="margin-top:400px;"class="btn btn-one">
+			<span>HOVER ME</span>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	$(document).ready(function() {
+		//$(".box-1").hide();
+
+		$("div.boxclass").hover(
+				function() {
+					$(this).addClass("zoom-effect");
+					$(".boxclass").not(this).addClass("blurred-background");
+				//	$(".box-1").show();
+				},
+				function() {
+					// Remove zoom-effect class only if close button not clicked
+					if (!$(this).find('.close-btn').filter(':hover')) {
+						$(this).removeClass("zoom-effect");
+						$(".boxclass").removeClass("blurred-background");
+					}
+				}
+		);
+
+		$(".close-btn").click(function(event) {
+			event.stopPropagation();
+			$(this).parent().removeClass("zoom-effect");
+			$("div.boxclass").removeClass("blurred-background").removeClass("zoom-effect");
+		});
+
+
+
+
+	});
+</script>
+
