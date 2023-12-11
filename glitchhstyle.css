@@ -68,7 +68,7 @@ ul li a .icon1 {
 	z-index: 3;
 }
 
-ul li a:hover .icon1 {
+ul li a:hover .icon {
 	color: #fff;
 	transform: rotateY(360deg);
 }
