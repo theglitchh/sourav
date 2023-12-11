@@ -17,7 +17,7 @@
 <style>
 	/* Additional CSS for the zoom effect */
 	.boxclass {
-		transition: transform 0.3s ease-in-out;
+		transition: transform 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 		position: relative;
 		z-index: 1;
 	}
@@ -26,23 +26,102 @@
 		position: fixed;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%) scale(1.2);
-		transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+		transform: translate(-50%, -50%) scale(1.3);
+		transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1), filter 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 		filter: blur(0);
 		z-index: 2;
 	}
 
 	.blurred-background {
-		filter: blur(5px);
+		filter: blur(15px);
 	}
 
-	
+	.close-container{
+  position: relative;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.leftright{
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #1E272D;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft{
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #F4A259;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+label{
+  color: white;
+  font-family: Helvetica, Arial, sans-serif; 
+  font-size: .6em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all .3s ease-in;
+  opacity: 0;
+}
+.close{
+  margin: 60px 0 0 5px;
+  position: absolute;
+}
+
+.close-container:hover .leftright{
+  transform: rotate(-45deg);
+  background-color: #F4A259;
+}
+.close-container:hover .rightleft{
+  transform: rotate(45deg);
+  background-color: #F25C66;
+}
+.close-container:hover label{
+  opacity: 1;
+}
+
+.imgclass1 {
+  --g: 4px;     /* the gap */
+  --b: 12px;    /* border thickness*/
+  --c: #fe8019; /* the color */
+  
+  
+  padding: calc(var(--g) + var(--b));
+  --_c: #0000 0 25%, var(--c) 0 50%;
+  --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+  --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+  background:
+    var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+    var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+  background-size: 200% var(--b),var(--b) 200%;
+  cursor: pointer;
+  filter: grayscale(50%);
+  transition: .3s;
+}
+.imgclass1:hover {
+  --_p: 75%;
+  filter: grayscale(0%);
+}
+
 </style>
 
 <body>
 <div class="boxclass">
 <table width="100%" border="0">
-<tr> <td style="padding-left:-20px;" rowspan="4"> <img class="imgclass1" src="./res/PXL_20230729_140247553.jpg" alt="souravImg">  </td>
+<tr> <td style="padding-left:-20px;" rowspan="4"><a href="https://github.com/theglitchh"><img style="" class="imgclass1" src="./res/PXL_20230729_140247553.jpg" alt="souravImg"> </a>  </td>
 <td><p class="p1 gradient" style="font-weight: bold; font-size: 20px;">Sourav Gope</p></td>
 </tr>
 <tr><td><p><i class="fa-solid fa-calendar-days"></i> Age: 22</p></td></tr>
@@ -53,45 +132,46 @@
 	<table>
 <tbody>
 <tr> <td><p>Hello there my name is Sourav Gope, I have completed my Btech In Computer Science & Engineering and I am currently
-working as a Programmerr Analyst at <a href="Https://SRINSIGHTS.com"> Strategic Research Insights. </a> </p></td></tr>
+working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic Research Insights. </a> </p></td></tr>
 </tbody>
 	</table>
 	<br>
-	<table> <tr> <td><ul>
+	<table> <tr> <td><ul style="margin-left:90px;">
 		<li>
 			<a href="#">
-				<i class="fas fa-paper-plane icon"></i>   </a>
+				<i class="fas fa-paper-plane icon1"></i>   </a>
 		</li>
 		<li>
-			<a href="#"><i class="fab fa-github icon"></i></a>
+			<a href="#"><i class="fab fa-github icon1"></i></a>
 		</li>
 		<li>
-			<a href="#"><i class="fas fa-code-branch icon"></i></a></li>
+			<a href="#"><i class="fas fa-code-branch icon1"></i></a></li>
 		<li>
-			<a href="#"><i class="fas fa-envelope icon"></i></a></li>
+			<a href="#"><i class="fas fa-envelope icon1"></i></a></li>
 	</ul></td></tr></table>
 
 </div>
 
 </body>
-<div style="margin-left:-1000px;" class="closeclass">
-	<div style="margin-top:400px;" class="box-1 close-btn">
-		<div style="margin-top:400px;"class="btn btn-one">
-			<span>HOVER ME</span>
-		</div>
+<div class="closeclass">
+	<div style="margin-left:1100px;margin-top:350px;" class="close-container close-btn">
+		<div class="leftright"></div>
+		<div class="rightleft"></div>
+		<label class="close">close</label>
+	  </div>
 	</div>
 
 </div>
 
 <script>
 	$(document).ready(function() {
-		//$(".box-1").hide();
+		$(".closeclass").hide();
 
 		$("div.boxclass").hover(
 				function() {
 					$(this).addClass("zoom-effect");
 					$(".boxclass").not(this).addClass("blurred-background");
-				//	$(".box-1").show();
+					$(".closeclass").show();
 				},
 				function() {
 					// Remove zoom-effect class only if close button not clicked
