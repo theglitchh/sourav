@@ -106,34 +106,36 @@ ul li:nth-child(4) a:before {
 }
 
 .boxclass {
+	position: absolute;
+	left: 5%;
 	background: var(--background);
 	max-width: 450px;
 	min-height: 250px;
-	margin : 30px 0px 0 150px;
+	top: 5%;
+	margin:30px;
 	padding: 40px 20px 20px 30px;
 	border-radius: 8px;
 	box-shadow: var(--shadow);
 	transition: margin 100ms;
-}
-.boxclass1 {
+  }
+  
+  .boxclass1 {
+	position: absolute;
+	right: 5%;
+	height:250px;
 	background: var(--background);
-	position: relative;
-	height: 250px;
-	margin: 0 auto;
-	padding: 20px;
-	max-width: 450px;
+	min-width: 450px;
 	min-height: 250px;
-	margin : -311px 0px 0 850px;
+	top: 5%; /* Same as boxclass */
 	padding: 40px 20px 20px 30px;
 	border-radius: 8px;
 	box-shadow: var(--shadow);
 	transition: calc(100ms * 2);
 	overflow-y: auto;
-	-ms-overflow-style: none;  /* IE and Edge */
+	-ms-overflow-style: none;
 	scrollbar-width: none;
 	text-align: left;
-	
-}
+  }
 
 .boxclass1 h1{
 text-align: center;
