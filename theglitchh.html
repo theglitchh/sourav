@@ -1,4 +1,5 @@
 <head>
+  <link rel="stylesheet" href="animate.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel='stylesheet' href='glitchhstyle.css'>
@@ -6,6 +7,7 @@
 
 	<link rel="" href="close.css">
 	<link rel="icon" href="S.png">
+  
 	<title>Sourav</title>
 	<meta charset="UTF-8">
 
@@ -19,33 +21,32 @@
     
 
     /* Style for the blog post */
-	.blog-post {
-      font-family: Arial, sans-serif;
-      margin-bottom: 15px; /* Reduce margin between blog posts */
-      padding: 10px; /* Add padding inside blog posts */
-      /*border: 3px dotted #ebdbb2; /* Add a border for separation */
-      border-radius: 6px; /* Rounded corners */
-      transition: transform 0.3s ease-in-out;
-	  
-    }
+    .blog-post {
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
 
-    .post-title {
-      font-size: 20px; /* Decrease title font size */
-      margin-bottom: 8px; /* Adjust spacing */
-    }
+.post-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
 
-    .post-meta {
-      font-style: italic;
-      color: #666;
-      margin-bottom: 10px; /* Adjust spacing */
-    }
-
-    .post-content {
-      line-height: 1.5;
-      font-size: 14px; /* Decrease content font size */
-    }
-
-
+.post-meta {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+.post-tags{
+  text-align: center;
+}
+.post-content {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 14px;
+}
 
     /* Zoom effect on hover 
     .blog-post:hover {
@@ -55,70 +56,108 @@
 
 
 	/* start of border*/
-	.upsale-button {
-    position: relative;
-    z-index: 0;
-    height: 150px;
-    overflow: hidden;
-    border: none !important;
-    padding: 0 !important;
-    background: #282828 !important;
-    color: #282828;
-    background: white;
-    border-radius: 8px;
-    width: 450px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    box-shadow: 0 4px 50px 0 rgb(0 0 0 / 7%);
-    transition: .2s all linear;
-    text-decoration: initial;
+
+
+  .txtarea{
+    font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 5px solid #ebdbb2;
+  border-radius: 18px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 24px;
+  border-style: dotted;
+  padding: 2rem 1rem;
+  min-height: 3em;
+  resize: both;
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23504945' /%3E%3Cstop offset='100%25' stop-color='%23504945' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
 }
 
 
-.upsale-button .span1{
-    position: inherit;
-    z-index: 1;
-    height: calc( 100% - 4px );
-    width: calc( 100% - 4px );
-    top: 2px;
-    left: 2px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border-radius: 8px;
-    color: white;
-    background: #282828;
+.container {
+  margin-left:50%;
+  margin-top:200px;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.5s ease-in-out; /* Transition for opacity changes */
+  opacity: 1; 
 }
 
-.upsale-button:after{
-   content: "";
-    position:inherit;
-    z-index: -2;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: 50% 50%, 50% 50%;
-    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    background-image: linear-gradient(90deg, rgba(255,255,255,0)    0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-    -webkit-animation: rotate 2s linear infinite;
-    animation: rotate 2s linear infinite;
+.chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
 }
 
-
-@-webkit-keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
 }
 
-@keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #ebdbb2;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  margin-top: 75px;
+  margin-left: -30px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: .25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
 }
   </style>
 
@@ -144,7 +183,7 @@
 	<table>
 <tbody>
 <tr> <td><p>Hello there my name is Sourav Gope, I have completed my Btech In Computer Science & Engineering and I am currently
-working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic Research Insights. </a> </p></td></tr>
+working as a Programmer Analyst at <a href="https://SRINSIGHTS.com"> Strategic Research Insights. </a> </p></td></tr>
 </tbody>
 	</table>
 	<br>
@@ -165,67 +204,54 @@ working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic R
 </div>
 
 <!--Second Card--> 
-<table width="100%" border="0" style="margin-left:10px;">
-	<tr>
-		<td>
+<table width="100%" border="0" style="margin-left: 10px;">
+  <tr>
+      <td>
+          <div class="boxclass1">
+              <div class="scrollable-content">
+                  <!-- Article 1 -->
+                  
+                  <article class="blog-post ">
+                      <header>
+                          <h2 class="post-title realname">Title of the Blog Post 1</h2>
+                          <p class="post-meta">Posted on January 1, 2023 by John Doe</p>
+                      </header>
+                      <div class="post-content">
+                          <p style="color:#a89984">This is the content of the first blog post.</p>
+                      </div>
+                      <footer>
+                          <p  class="post-tags">Tags: <a href="#" style="color:#666" >Tag1</a>, <a href="#" style="color:#666" >Tag2</a>, <a href="#" style="color:#666">Tag3</a></p>
+                      </footer>
+                  </article>
+                
+                  <!-- End Article 1 -->
 
-			<div class="boxclass1">
-				<div class="scrollable-content">
-					<!-- Article 1 -->
-				
+                  <!-- Article 2 -->
+                  <article class="blog-post">
+                      <header>
+                          <h2 class="post-title realname1">Title of the Blog Post 2</h2>
+                          <p class="post-meta">Posted on January 2, 2023 by Jane Doe</p>
+                      </header>
+                      <div class="post-content">
+                          <p style="color:#a89984" >This is the content of the second blog post.</p>
+                      </div>
+                      <footer>
+                          <p class="post-tags">Tags: <a style="color:#666" href="#">Tag4</a>, <a style="color:#666" href="#">Tag5</a>, <a  style="color:#666" href="#">Tag6</a></p>
+                      </footer>
+                  </article>
+                  <!-- End Article 2 -->
+              </div>
+          </div>
+      </td>
+  </tr>
+</table>
+<table width="100%">
+  <tr> <td>  <div class="container">
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+  </div> </td></tr>
 
-					<div href='/' class="upsale-button">
-						<span class="span1">
-							  <article class="blog-post">
-										<header style="text-align: left;">
-										  <h2 style="text-align: center;" class="post-title">Title of the Blog Post 1</h2>
-										  <p class="post-meta">Posted on January 1, 2023 by John Doe</p>
-										</header>
-										<div class="post-content">
-										  <p>This is the content of the blog post. You can put your text, images, and other media here.</p>
-										  <!-- You can add more content here -->
-										</div>
-									  </article>
-						</span>
-					</div>
-
-				  
-		
-					<!-- Add more articles with similar structure -->
-					<!-- Article 2 -->
-					<article class="blog-post">
-					  <header>
-						<h2 class="post-title">Title of the Blog Post 2</h2>
-						<p class="post-meta">Posted on January 2, 2023 by Jane Doe</p>
-					  </header>
-					  <div class="post-content">
-						<p>This is the content of the second blog post.</p>
-					  </div>
-					  <footer>
-						<p class="post-tags">Tags: <a href="#">Tag4</a>, <a href="#">Tag5</a>, <a href="#">Tag6</a></p>
-					  </footer>
-					</article>
-		
-					
-					<!-- End of additional articles -->
-				  </div>  
-			</div>
-
-			<!--for book shelf
-				<div class="shelf">
-				<a class="book home-page">Blogs</a>
-				<a class="book about-us">Projects</a>
-				<a class="book contact">Contact</a>
-				<a class="book faq">F.A.Q.</a>
-				
-				<span class="book not-found"></span>
-			   
-				<span class="door left"></span>
-				<span class="door right"></span>
-			</div> -->
-		
-		</td>
-	</tr>
 </table>
 
 <!--Third Card-->
@@ -242,39 +268,20 @@ working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic R
 
 
 
-
-<script> 
-// cursor
-
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-		i = document.getElementById("cursor3");
-        t.style.left = n.clientX + "px", 
-		t.style.top = n.clientY + "px", 
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px", 
-		i.style.left = n.clientX + "px", 
-		i.style.top = n.clientY + "px"
-    });
-    var t = document.getElementById("cursor"),
-        e = document.getElementById("cursor2"),
-        i = document.getElementById("cursor3");
-    function n(t) {
-        e.classList.add("hover"), i.classList.add("hover")
-    }
-    function s(t) {
-        e.classList.remove("hover"), i.classList.remove("hover")
-    }
-    s();
-    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
-        o(r[a])
-    }
-    function o(t) {
-        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
-    }              
-              
-  
-
+<script>
+   document.querySelector('.scrollable-content').addEventListener('scroll', function() {
+      jquery(".post-title").removeClass("realname");  
+        }); 
+     
+     
+        window.addEventListener('scroll', function() {
+  var container = document.querySelector('.container');
+  if (window.scrollY > 50) {
+    container.style.opacity = '0'; // Fade out by setting opacity to 0
+  } else {
+    container.style.opacity = '1'; // Fade in by setting opacity to 1
+  }
+});
 </script>
-
 
 <script src="theglitchh.js"></script>
