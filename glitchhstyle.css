@@ -118,17 +118,30 @@ ul li:nth-child(4) a:before {
 .boxclass1 {
 	background: var(--background);
 	position: relative;
-	
+	height: 350px;
 	margin: 0 auto;
 	padding: 20px;
-	max-width: 470px;
+	max-width: 400px;
 	min-height: 350px;
 	margin : -311px 0px 0 850px;
 	padding: 40px 20px 20px 30px;
 	border-radius: 8px;
 	box-shadow: var(--shadow);
-	transition: margin 100ms;
+	transition: calc(100ms * 2);
+	overflow-y: auto;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;
+	text-align: left;
+	
 }
+
+.boxclass1 h1{
+text-align: center;
+}
+.boxclass1::-webkit-scrollbar {
+	display: none;
+  }
+
 html {
 	color: var(--foreground);
 	background: var(--backdrop);
@@ -347,6 +360,7 @@ a:hover{
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: textclip 2s linear infinite;
+	
 }
 
 @keyframes textclip {

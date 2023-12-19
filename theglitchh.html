@@ -15,6 +15,113 @@
 </head>
 
 
+	<style>
+    
+
+    /* Style for the blog post */
+	.blog-post {
+      font-family: Arial, sans-serif;
+      margin-bottom: 15px; /* Reduce margin between blog posts */
+      padding: 10px; /* Add padding inside blog posts */
+      /*border: 3px dotted #ebdbb2; /* Add a border for separation */
+      border-radius: 6px; /* Rounded corners */
+      transition: transform 0.3s ease-in-out;
+	  
+    }
+
+    .post-title {
+      font-size: 20px; /* Decrease title font size */
+      margin-bottom: 8px; /* Adjust spacing */
+    }
+
+    .post-meta {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px; /* Adjust spacing */
+    }
+
+    .post-content {
+      line-height: 1.5;
+      font-size: 14px; /* Decrease content font size */
+    }
+
+
+
+    /* Zoom effect on hover 
+    .blog-post:hover {
+      transform: scale(1.05);  Adjust the scaling factor as needed
+    }*/
+
+
+
+	/* start of border*/
+	.upsale-button {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    overflow: hidden;
+    border: none !important;
+    padding: 0 !important;
+    background: #282828 !important;
+    color: #282828;
+    background: white;
+    border-radius: 8px;
+    width: 450px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    box-shadow: 0 4px 50px 0 rgb(0 0 0 / 7%);
+    transition: .2s all linear;
+    text-decoration: initial;
+}
+
+
+.upsale-button .span1{
+    position: inherit;
+    z-index: 1;
+    height: calc( 100% - 4px );
+    width: calc( 100% - 4px );
+    top: 2px;
+    left: 2px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    color: white;
+    background: #282828;
+}
+
+.upsale-button:after{
+   content: "";
+    position:inherit;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(90deg, rgba(255,255,255,0)    0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+}
+
+
+@-webkit-keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  </style>
+
 
 <canvas  id="bgCanvas"></canvas>
 <body>
@@ -57,12 +164,55 @@ working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic R
 
 </div>
 
-<!--Second Card--> <!--
-<table width="100%" style="margin-left:300px;">
+<!--Second Card--> 
+<table width="100%" border="0" style="margin-left:10px;">
 	<tr>
 		<td>
 
-			<div class="shelf">
+			<div class="boxclass1">
+				<div class="scrollable-content">
+					<!-- Article 1 -->
+				
+
+					<div href='/' class="upsale-button">
+						<span class="span1">
+							  <article class="blog-post">
+										<header style="text-align: left;">
+										  <h2 style="text-align: center;" class="post-title">Title of the Blog Post 1</h2>
+										  <p class="post-meta">Posted on January 1, 2023 by John Doe</p>
+										</header>
+										<div class="post-content">
+										  <p>This is the content of the blog post. You can put your text, images, and other media here.</p>
+										  <!-- You can add more content here -->
+										</div>
+									  </article>
+						</span>
+					</div>
+
+				  
+		
+					<!-- Add more articles with similar structure -->
+					<!-- Article 2 -->
+					<article class="blog-post">
+					  <header>
+						<h2 class="post-title">Title of the Blog Post 2</h2>
+						<p class="post-meta">Posted on January 2, 2023 by Jane Doe</p>
+					  </header>
+					  <div class="post-content">
+						<p>This is the content of the second blog post.</p>
+					  </div>
+					  <footer>
+						<p class="post-tags">Tags: <a href="#">Tag4</a>, <a href="#">Tag5</a>, <a href="#">Tag6</a></p>
+					  </footer>
+					</article>
+		
+					
+					<!-- End of additional articles -->
+				  </div>  
+			</div>
+
+			<!--for book shelf
+				<div class="shelf">
 				<a class="book home-page">Blogs</a>
 				<a class="book about-us">Projects</a>
 				<a class="book contact">Contact</a>
@@ -72,11 +222,11 @@ working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic R
 			   
 				<span class="door left"></span>
 				<span class="door right"></span>
-			</div>
+			</div> -->
 		
 		</td>
 	</tr>
-</table>-->
+</table>
 
 <!--Third Card-->
 
@@ -97,6 +247,7 @@ working as a Programmer Analyst at <a href="Https://SRINSIGHTS.com"> Strategic R
 // cursor
 
     document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+		i = document.getElementById("cursor3");
         t.style.left = n.clientX + "px", 
 		t.style.top = n.clientY + "px", 
 		e.style.left = n.clientX + "px", 
